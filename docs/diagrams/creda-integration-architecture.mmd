@@ -1,0 +1,17 @@
+flowchart TD
+    A[Application / Agent / Workflow]
+    B[Governance Request]
+    C[CREDA Implementation Boundary]
+    D[Governance Response]
+    E[Infrastructure Adapter]
+    F[Blockchain / DLT]
+    G[API / Application]
+    H[Enterprise / Legacy System]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+    E --> H
