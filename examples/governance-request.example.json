@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1",
+  "request_id": "request-ref-001",
+  "action": "example:release-transaction",
+  "subject_id": "subject-123",
+  "resource_id": "resource-456",
+  "scope": "example:transaction-approval",
+  "authority_state_reference": "as-ref-001",
+  "governance_context_reference": "example-policy-set-v1",
+  "requested_at": "2026-09-20T15:00:00Z"
+}
