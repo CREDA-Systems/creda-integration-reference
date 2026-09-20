@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://credasystems.com/schemas/governance-response.schema.json",
+  "title": "CREDA Governance Response Reference Schema",
+  "description": "Non-normative public reference interface for representing a machine-readable governance response produced by a CREDA implementation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "response_id",
+    "request_id",
+    "outcome",
+    "evaluated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "response_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for the governance response."
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier for the governance request that produced this response."
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "permit",
+        "deny",
+        "additional_evidence_required",
+        "additional_approval_required",
+        "escalate",
+        "unable_to_verify"
+      ],
+      "description": "Simplified public reference outcome vocabulary. This vocabulary is non-normative."
+    },
+    "decision_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional reference to a decision artifact or implementation-defined decision record."
+    },
+    "authority_state_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional reference to authority-related state associated with the evaluation."
+    },
+    "evaluation_context_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional reference to the policy, ruleset, or evaluation context used."
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp at which the governance response was produced."
+    },
+    "valid_until": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "description": "Optional timestamp after which the response should not be relied upon without reevaluation."
+    },
+    "integrity_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional implementation-defined integrity or provenance reference."
+    },
+    "execution_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional reference to a downstream transaction, receipt, execution, or external system record."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional implementation-specific metadata. Consumers should not treat metadata as normative governance semantics."
+    }
+  }
+}
