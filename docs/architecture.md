@@ -8,6 +8,8 @@ It is intentionally high-level and non-normative.
 
 It does not disclose the complete CREDA runtime, proprietary orchestration logic, internal services, protected implementation methods, or patent-sensitive technical details.
 
+![CREDA Integration Reference Architecture](diagrams/creda-integration-architecture.svg)
+
 ## Architectural Principle
 
 CREDA® separates the system requesting governance evaluation from the infrastructure that ultimately consumes, records, or executes the resulting governance decision.
