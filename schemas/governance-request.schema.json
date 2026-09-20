@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://credasystems.com/schemas/governance-request.schema.json",
+  "title": "CREDA Governance Request Reference Schema",
+  "description": "Non-normative public reference interface for submitting a governance request to a CREDA implementation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "action",
+    "subject_id",
+    "requested_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for the governance request."
+    },
+    "action": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Implementation-defined identifier for the proposed action."
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier for the subject, actor, agent, or system associated with the proposed action."
+    },
+    "resource_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional identifier for the resource or target affected by the proposed action."
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional implementation-defined scope associated with the request."
+    },
+    "authority_state_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional reference to authority-related state relevant to the proposed action."
+    },
+    "governance_context_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional reference to the governance or evaluation context applicable to the request."
+    },
+    "requested_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp at which the governance request was created."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional implementation-specific metadata. Consumers should not treat metadata as normative governance semantics."
+    }
+  }
+}
