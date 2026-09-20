@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "response_id": "response-ref-001",
+  "request_id": "request-ref-001",
+  "outcome": "permit",
+  "decision_reference": "decision-ref-001",
+  "authority_state_reference": "as-ref-001",
+  "evaluation_context_reference": "example-policy-set-v1",
+  "evaluated_at": "2026-09-20T15:00:02Z",
+  "valid_until": "2026-09-20T15:05:02Z",
+  "integrity_reference": "example-integrity-reference",
+  "execution_reference": "example-downstream-receipt"
+}
